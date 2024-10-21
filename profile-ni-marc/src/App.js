@@ -46,7 +46,14 @@ function App() {
         <p>this is me Marc Rainier</p>
       </header>
 
+
+
+
       <div className="d-flex flex-column mb-4" style={{ alignItems: 'flex-start', width: '100%' }}>
+
+        <button className="btn btn-outline-primary btn-sm mb-2 btn-animate" onClick={() => handleButtonClick('Home')}>
+          Home
+        </button>
         <button className="btn btn-outline-primary btn-sm mb-2 btn-animate" onClick={() => handleButtonClick('About')}>
           About
         </button>
@@ -59,6 +66,12 @@ function App() {
       </div>
 
       <div className="card shadow p-4 mb-4 animate__animated animate__fadeIn" style={{ width: '100%', maxWidth: '800px' }}>
+        {section === 'Home' && (
+          <div className="skills-section animate__animated animate__fadeIn">
+            <h2 className="card-title text-center">Its Home</h2>
+
+          </div>
+        )}
         {section === 'About' && (
           <div className="about-section animate__animated animate__fadeIn">
             <h2 className="card-title text-center">About Me</h2>
@@ -78,9 +91,13 @@ function App() {
             </ul>
           </div>
         )}
+
         {section === 'Contact' && (
           <div className="contact-section animate__animated animate__fadeIn">
             <h2 className="card-title text-center">Contact Me</h2>
+
+
+
             <form onSubmit={handleSubmit} className="mt-4">
               <div className="form-group mb-3">
                 <input
